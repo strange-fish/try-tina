@@ -1,0 +1,7 @@
+{
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json",
+    "config": "json"
+  }
+}
