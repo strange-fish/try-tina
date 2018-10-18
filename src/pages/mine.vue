@@ -1,7 +1,7 @@
 <template minapp="native" lang="wxml">
   <view>
-    <view wx:if="{{crazy}}">
-      i am crazy
+    <view >
+      {{name}}
     </view>
     <button bind:tap="turnCrazyIntoSb">
       {{name}}
@@ -24,7 +24,7 @@ Page.define({
   },
   compute ({ crazy }) {
     return {
-      name: crazy ? 'what' : 'shit'
+      name: this.$source.options.id
     }
   },
   methods: {

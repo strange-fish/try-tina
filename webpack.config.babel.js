@@ -35,7 +35,7 @@ export default {
     filename: '[name]',
     publicPath: '/'
   },
-  devtool: 'sourceMap',
+  devtool: 'source-map',
   module: {
     rules: [
       {

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@tinajs/tina": "^1.4.1",
+    "@tinajs/tina-router": "^0.4.0",
     "dayjs": "^1.7.5",
     "es6-promise": "^4.1.1",
     "flyio": "^0.6.2"
@@ -21,6 +22,7 @@
     "@tinajs/mina-entry-webpack-plugin": "^0.6.2",
     "@tinajs/mina-loader": "^0.6.0",
     "@tinajs/mina-runtime-webpack-plugin": "^0.1.4",
+    "@types/tinajs__tina": "^1.4.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",

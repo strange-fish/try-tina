@@ -14,14 +14,14 @@ function injectDep (deps) {
 const eventBus = new Bus()
 
 injectDep({
-  $day: {
-    get () {
-      return dayjs
-    }
-  },
   $bus: {
     get () {
       return eventBus
+    }
+  },
+  $day: {
+    get () {
+      return dayjs
     }
   },
   $global: {

@@ -1,3 +1,5 @@
+<config></config>
+
 <template minapp="native" lang="wxml">
   <view>
   </view>
@@ -11,9 +13,6 @@ Page.define({
   },
   onLoad () {
   },
-  /**
-   * param 为data
-   */
   compute (data) {
     return {
       name: data ? 'what' : 'how'

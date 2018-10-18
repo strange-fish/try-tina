@@ -38,7 +38,9 @@ Page.define({
   },
   methods: {
     goToMine () {
-      this.$navigateTo('/pages/mine')
+      this.$navigateTo('/pages/mine', {
+        id: '123'
+      })
     },
     handleChange (e) {
       const { value } = e.detail
