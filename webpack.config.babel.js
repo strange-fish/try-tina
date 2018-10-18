@@ -20,6 +20,13 @@ const loaders = {
 
 export default {
   context: resolve('src'),
+  stats: {
+    assets: false,
+    chunks: false,
+    chunkModules: false,
+    chunkOrigins: false,
+    modules: false
+  },
   entry: './app.vue',
   output: {
     path: resolve('dist'),

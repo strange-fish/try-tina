@@ -35,6 +35,9 @@ Page.define({
   },
   onLoad () {
     this.haha()
+    this.$http.get(`/what`).then((res) => {
+      const data = res.data
+    })
   },
   methods: {
     handleChange (e) {
