@@ -6,14 +6,23 @@
 }
 </config>
 
-<template lang="wxml" minapp="native">
+<template minapp="native" lang="wxml">
   <view>
-    Hi <author />
-    <view class="what" bind:tap="handleClick">
-      <view>
-        what the handleClick
+    <author>
+      <view bind:tap="handleClick">
+        What are we talking about?
+        {{name}}
       </view>
+    </author>
+    <input 
+      value="{{name}}" 
+      bind:confirm="handleChange"
+    />
+    <view class="what" bind:tap="handleClick">
+      what the handleClick
     </view>
+    <scroll-view>
+    </scroll-view>
   </view>
 </template>
 
@@ -21,10 +30,17 @@
 import { Page } from '@tinajs/tina'
 
 Page.define({
+  data: {
+    name: 'what name'
+  },
   onLoad () {
     this.haha()
   },
   methods: {
+    handleChange (e) {
+      const { value } = e.detail
+      this.setData({ name: value })
+    },
     handleClick () {
       console.log(' what the hack')
     },

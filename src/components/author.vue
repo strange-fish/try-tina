@@ -4,9 +4,9 @@
 }
 </config>
 
-<template>
+<template lang="wxml" minapp="native">
   <view>
-    what the hack
+    <slot></slot>
   </view>
 </template>
 

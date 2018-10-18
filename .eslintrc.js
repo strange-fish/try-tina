@@ -3,6 +3,7 @@ module.exports = {
     globals: {
         App: true,
         Component: true,
-        Page: true
+        Page: true,
+        wx: true
     }
 };

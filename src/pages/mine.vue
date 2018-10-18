@@ -1,4 +1,4 @@
-<template>
+<template minapp="native" lang="wxml">
   <view>
     <view wx:if="{{crazy}}">
       i am crazy
