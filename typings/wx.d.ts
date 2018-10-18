@@ -406,11 +406,6 @@ interface PageConstructor {
              */
             path: string;
         };
-        /**
-         * when language change this will be trigger
-         * 语言变化的回调
-         */
-        onLanguageChange?: () => void;
 
         [key: string]: any;
     }): Page;

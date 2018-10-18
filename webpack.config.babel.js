@@ -4,10 +4,11 @@ import MinaEntryPlugin from '@tinajs/mina-entry-webpack-plugin'
 import MinaRuntimePlugin from '@tinajs/mina-runtime-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
+// 旧版本，先不升级，反正功能也没多多少
 const isProduction = process.env.NODE_ENV === 'production'
 
 const loaders = {
-  script: 'babel-loader',
+  script: ['babel-loader'],
   style: {
     loader: 'postcss-loader',
     options: {
@@ -25,7 +26,8 @@ export default {
     chunks: false,
     chunkModules: false,
     chunkOrigins: false,
-    modules: false
+    modules: false,
+    colors: true
   },
   entry: './app.vue',
   output: {

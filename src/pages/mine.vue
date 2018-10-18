@@ -6,7 +6,7 @@
     <button bind:tap="turnCrazyIntoSb">
       {{name}}
     </button>
-    <button bind:tap="turnOff">
+    <button bind:tap="toggleEvent">
       Turn off
     </button>
   </view>

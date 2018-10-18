@@ -16,7 +16,7 @@ Page.define({
    */
   compute (data) {
     return {
-      name: data ? 'what' : 'shit'
+      name: data ? 'what' : 'how'
     }
   },
   methods: {

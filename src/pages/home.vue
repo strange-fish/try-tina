@@ -10,19 +10,16 @@
   <view>
     <author>
       <view bind:tap="handleClick">
-        What are we talking about?
         {{name}}
       </view>
     </author>
-    <input 
-      value="{{name}}" 
-      bind:confirm="handleChange"
-    />
+    <input value="{{name}}" bind:confirm="handleChange" />
     <view class="what" bind:tap="handleClick">
       what the handleClick
     </view>
-    <scroll-view>
-    </scroll-view>
+    <button bind:tap="goToMine">
+      Mine
+    </button>
   </view>
 </template>
 
@@ -31,7 +28,7 @@ import { Page } from '@tinajs/tina'
 
 Page.define({
   data: {
-    name: 'what name'
+    name: 'what nam'
   },
   onLoad () {
     this.haha()
@@ -40,6 +37,9 @@ Page.define({
     })
   },
   methods: {
+    goToMine () {
+      this.$navigateTo('/pages/mine')
+    },
     handleChange (e) {
       const { value } = e.detail
       this.setData({ name: value })
