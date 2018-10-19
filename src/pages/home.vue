@@ -50,13 +50,14 @@ Page.define({
       console.log(' what the hack')
     },
     haha () {
-      console.log(this.$day())
+
     }
   }
 })
 </script>
 
 <style lang="scss">
+
 .what {
   font-size: 14px;
 }

@@ -19,6 +19,17 @@ const loaders = {
   }
 }
 
+const myStyle = [
+  loaders.style,
+  'sass-loader',
+  {
+    loader: 'sass-resources-loader',
+    options: {
+      resources: resolve(__dirname, './src/styles/index.scss')
+    }
+  }
+]
+
 export default {
   context: resolve('src'),
   stats: {
@@ -45,7 +56,10 @@ export default {
           {
             loader: '@tinajs/mina-loader',
             options: {
-              loaders
+              loaders: {
+                ...loaders,
+                style: myStyle
+              }
             }
           }
         ]
@@ -96,6 +110,10 @@ export default {
   },
   resolve: {
     symlinks: true
+    // extensions: ['.js', '.vue', '.json', '.scss'],
+    // alias: {
+    //   '@': resolve('src')
+    // }
   },
   plugins: [
     new webpack.EnvironmentPlugin({

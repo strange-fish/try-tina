@@ -11,15 +11,17 @@ import { Page } from '@tinajs/tina'
 Page.define({
   data: {
   },
-  onLoad () {
-  },
   compute (data) {
     return {
       name: data ? 'what' : 'how'
     }
   },
+  onLoad () {
+    this.getInfo()
+  },
   methods: {
-
+    getInfo () {
+    }
   }
 })
 </script>
