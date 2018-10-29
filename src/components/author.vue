@@ -15,10 +15,11 @@ import { Component } from '@tinajs/tina'
 
 Component.define({
   data: {
-
   },
   methods: {
-
+    handleClick () {
+      this.$bus.on('click', () => {})
+    }
   }
 })
 </script>
