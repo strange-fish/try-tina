@@ -50,7 +50,6 @@ Page.define({
       console.log(' what the hack')
     },
     haha () {
-
     }
   }
 })

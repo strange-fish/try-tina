@@ -1,7 +1,7 @@
 // / <reference types="@types/tinajs__tina" />
 import * as tina from '@tinajs/tina'
 import dayjs from 'dayjs'
-import Fly from 'flyio'
+import * as fly from 'flyio'
 
 import http from '../src/utils/http.js'
 import Bus from '../src/utils/Bus.js'
@@ -16,7 +16,7 @@ declare module '@tinajs/tina' {
     $day(config: dayjs.ConfigType): dayjs.Dayjs;
     $bus: Bus;
     $global: global;
-    $http: Fly;
+    $http: fly.Fly;
     $navigateTo: WxRouteWrap;
     $redirectTo: WxRouteWrap;
     $reLaunch: WxRouteWrap;

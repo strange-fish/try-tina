@@ -1,6 +1,6 @@
 export default class Bus {
   constructor () {
-    this.eventMap = {}
+    this._eventMap = {}
   }
   /**
    * 绑定事件
@@ -9,10 +9,10 @@ export default class Bus {
    */
   on (event, cb) {
     if (typeof cb !== 'function') throw new Error('Not a function!')
-    const cbList = this.eventMap[event] || []
+    const cbList = this._eventMap[event] || []
     if (!cbList.includes(cb)) {
       cbList.push(cb)
-      this.eventMap[event] = cbList
+      this._eventMap[event] = cbList
     }
   }
   /**
@@ -21,8 +21,8 @@ export default class Bus {
    * @param {Function} cb
    */
   off (event, cb) {
-    const cbList = this.eventMap[event] || []
-    this.eventMap[event] = cbList.filter(item => item !== cb)
+    const cbList = this._eventMap[event] || []
+    this._eventMap[event] = cbList.filter(item => item !== cb)
   }
   /**
    *
@@ -30,6 +30,6 @@ export default class Bus {
    * @param {Any} args
    */
   emit (event, args) {
-    this.eventMap[event].forEach(cb => cb(args))
+    this._eventMap[event].forEach(cb => cb(args))
   }
 }
