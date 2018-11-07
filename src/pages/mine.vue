@@ -17,7 +17,8 @@ import { Page } from '@tinajs/tina'
 
 Page.define({
   data: {
-    crazy: true
+    crazy: true,
+    arr: []
   },
   onLoad () {
     this.$bus.on('hack', this.myEvent)

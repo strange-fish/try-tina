@@ -1,13 +1,21 @@
 <config>
 {
   "usingComponents": {
-    "author": "../components/author.vue"
+    "author": "../components/author.vue",
+    "form-input": "../components/form-input.vue"
   }
 }
 </config>
 
 <template minapp="native" lang="wxml">
   <view class="home">
+    <form-input
+      wx:for="{{arr}}"
+      bind:output="handleChange"
+      data-id="{{item.id}}"
+      value="{{item.value}}"
+      error="{{item.error}}">
+    </form-input>
     <view class="wrap">
       <button bind:tap="goToMine" class="home__btn">
         Mine
@@ -23,7 +31,12 @@ Page.define({
   data: {
     name: 'what nam',
     fixed: true,
-    width: 350
+    width: 450,
+    arr: [
+      { id: 1, value: 1, error: '' },
+      { id: 2, value: 1, error: '' },
+      { id: 3, value: 1, error: '' }
+    ]
   },
   onLoad () {
     this.$http.get(`/what`).then((res) => {
@@ -32,7 +45,7 @@ Page.define({
     this.scroll()
   },
   methods: {
-    scroll () {
+    scroll (what) {
       wx.createIntersectionObserver().relativeToViewport({top: 0}).observe('.wrap', (res) => {
         this.setData({ fixed: !this.data.fixed })
       })
@@ -50,6 +63,7 @@ Page.define({
       console.log(' what the hack')
     },
     haha () {
+      this.triggerEvent('evnet', { what: 'trfe'})
     }
   }
 })

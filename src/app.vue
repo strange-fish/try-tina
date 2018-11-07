@@ -2,7 +2,7 @@
 {
   "pages": [
     "pages/home.vue",
-    "pages/mine.vue",
+    "pages/mine.vue"
   ]
 }
 </config>
