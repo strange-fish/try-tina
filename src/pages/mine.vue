@@ -29,7 +29,7 @@ Page.define({
     }
   },
   methods: {
-    turnCrazyIntoSb () {
+    turnCrazyIntoSb (e) {
       this.$bus.emit('hack', 'geek')
       this.setData({ crazy: false })
     },
