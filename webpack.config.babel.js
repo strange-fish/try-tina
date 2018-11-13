@@ -11,10 +11,10 @@ const loaders = {
     loader: 'postcss-loader',
     options: {
       config: {
-        path: resolve('./postcss.config.js'),
-      },
-    },
-  },
+        path: resolve('./postcss.config.js')
+      }
+    }
+  }
 }
 
 const myStyle = [
@@ -35,7 +35,7 @@ module.exports = {
     path: resolve(__dirname, 'dist'),
     filename: '[name]',
     publicPath: '/',
-    globalObject: 'wx',
+    globalObject: 'wx'
   },
   stats: {
     assets: false,
@@ -55,74 +55,74 @@ module.exports = {
           {
             loader: '@tinajs/mina-loader',
             options: {
-              loaders: {
-                ...loaders,
-                style: myStyle
+              loaders,
+              languages: {
+                scss: myStyle
               }
-            },
-          },
-        ],
+            }
+          }
+        ]
       },
       {
         test: /\.mina$/,
         include: /node_modules/,
-        use: '@tinajs/mina-loader',
+        use: '@tinajs/mina-loader'
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: loaders.script,
+        use: loaders.script
       },
       {
         test: /\.(css|wxss)$/,
         exclude: /node_modules/,
-        use: loaders.style,
+        use: loaders.style
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: 'assets/[name].[hash:6].[ext]',
-          },
-        },
+            name: 'assets/[name].[hash:6].[ext]'
+          }
+        }
       },
       {
         test: /\.wxs$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: 'wxs/[name].[hash:6].[ext]',
-          },
-        },
-      },
-    ],
+            name: 'wxs/[name].[hash:6].[ext]'
+          }
+        }
+      }
+    ]
   },
   resolve: {
-    symlinks: true,
+    symlinks: true
   },
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
-      DEBUG: false,
+      DEBUG: false
     }),
     new MinaEntryPlugin({
-      map: entry => ['es6-promise/dist/es6-promise.auto.js', entry],
+      map: entry => ['es6-promise/dist/es6-promise.auto.js', entry]
     }),
     new MinaRuntimePlugin({
-      runtime: './runtime.js',
-    }),
+      runtime: './runtime.js'
+    })
   ],
   optimization: {
     splitChunks: {
       chunks: 'all',
       name: 'common.js',
       minChunks: 2,
-      minSize: 0,
+      minSize: 0
     },
     runtimeChunk: {
-      name: 'runtime.js',
-    },
+      name: 'runtime.js'
+    }
   },
-  mode: isProduction ? 'production' : 'none',
+  mode: isProduction ? 'production' : 'none'
 }

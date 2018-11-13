@@ -1,4 +1,4 @@
-<template minapp="native" lang="wxml">
+<template minapp="native" xlang="wxml">
   <view>
     <view >
       {{name}}
@@ -29,10 +29,6 @@ Page.define({
     }
   },
   methods: {
-    turnCrazyIntoSb (e) {
-      this.$bus.emit('hack', 'geek')
-      this.setData({ crazy: false })
-    },
     myEvent (str) {
       console.log('you are a fool!', str)
     },

@@ -1,4 +1,8 @@
-<config></config>
+<config>
+{
+  "usingComponents": "../components/author.vue"
+}
+</config>
 
 <template minapp="native" xlang="wxml">
   <view>
@@ -17,11 +21,8 @@ Page.define({
     }
   },
   onLoad () {
-    this.getInfo()
   },
   methods: {
-    getInfo () {
-    }
   }
 })
 </script>

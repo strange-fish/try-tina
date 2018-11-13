@@ -4,7 +4,7 @@
 }
 </config>
 
-<template lang="wxml" minapp="native">
+<template xlang="wxml" minapp="native">
   <view>
     <slot></slot>
   </view>
@@ -17,13 +17,12 @@ Component.define({
   data: {
 
   },
+  
   methods: {
-
   }
 })
 </script>
 
 <style lang="scss">
-
 </style>
 

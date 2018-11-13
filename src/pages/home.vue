@@ -7,7 +7,7 @@
 }
 </config>
 
-<template minapp="native" lang="wxml">
+<template minapp="native" xlang="wxml">
   <view class="home">
     <form-input
       wx:for="{{arr}}"
@@ -36,7 +36,7 @@ Page.define({
       { id: 1, value: 1, error: '' },
       { id: 2, value: 1, error: '' },
       { id: 3, value: 1, error: '' }
-    ]
+    ],
   },
   onLoad () {
     this.$http.get(`/what`).then((res) => {

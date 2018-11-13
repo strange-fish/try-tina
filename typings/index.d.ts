@@ -24,8 +24,16 @@ declare module '@tinajs/tina' {
       composed: boolean,
       capturePhase: boolean
     }): void;
-    
-    $source: any;
+    /**
+     * 小程序页面的实例
+     */
+    $source: {
+      [key: string]: any;
+      /**
+       * query的params
+       */
+      $option: object;
+    };
 
     // own dep
     $day(config: dayjs.ConfigType): dayjs.Dayjs;

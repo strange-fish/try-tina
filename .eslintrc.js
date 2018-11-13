@@ -1,9 +1,9 @@
 module.exports = {
-    "extends": "standard",
     globals: {
+        wx: true,
         App: true,
-        Component: true,
         Page: true,
-        wx: true
-    }
+        Component: true
+    },
+    "extends": "standard"
 };
