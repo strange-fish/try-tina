@@ -1,6 +1,6 @@
 <config></config>
 
-<template minapp="native" lang="wxml">
+<template minapp="native" xlang="wxml">
   <view>
   </view>
 </template>

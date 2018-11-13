@@ -24,6 +24,8 @@ declare module '@tinajs/tina' {
       composed: boolean,
       capturePhase: boolean
     }): void;
+    
+    $source: any;
 
     // own dep
     $day(config: dayjs.ConfigType): dayjs.Dayjs;
